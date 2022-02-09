@@ -1,0 +1,21 @@
+body {
+  background-image: url("background.jpg");
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-family: 'Brush Script MT', cursive;
+  color: rgb(27, 24, 24);
+}
+
+h1 {
+  display:flex;
+  font-size: 10rem;
+  margin-top: -20rem;
+}
+
+
