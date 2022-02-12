@@ -9,7 +9,6 @@ pipeline {
         }
         stage('Execute Tests'){
             steps{
-                bat 'npm --prefix ./front install'
                 bat 'npm --prefix ./front run test --watchAll=false'
             }
         }
