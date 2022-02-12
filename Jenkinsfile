@@ -16,8 +16,6 @@ pipeline {
         }
         stage('Deliver'){
             steps{
-                bat 'git add .'
-                bat 'git commit -m "changes while building'
                 bat 'git checkout release'
                 bat 'git add .'
                 bat 'git commit -m "Code after test passed'
