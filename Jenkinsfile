@@ -1,3 +1,5 @@
+def flag = false;
+
 pipeline {
     agent any
     stages{
@@ -9,7 +11,18 @@ pipeline {
         }
         stage('Execute Tests'){
             steps{
-                bat 'npm test --watchAll=false'
+                bat 'npm --prefix ./front run test --watchAll=false'
+                script { flag = true }
+            }
+        }
+        stage('Deliver'){
+            when( expression { flag == true})
+            steps{
+                bat 'git checkout release'
+                bat 'git add .'
+                bat 'git commit -m "Code after test passed'
+                bat 'git push'
+
             }
         }
     }
