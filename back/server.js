@@ -12,7 +12,7 @@ const session = require('express-session');
     app.use(
         session({
             secret: 'secret string',
-            resave: true,
+            resave: false,
             saveUnitialized: false,
             cookies :{}
         })
