@@ -1,5 +1,3 @@
-def flag = false;
-
 pipeline {
     agent any
     stages{
@@ -16,7 +14,6 @@ pipeline {
             }
         }
         stage('Deliver'){
-            when( expression { flag == true})
             steps{
                 bat 'git checkout release'
                 bat 'git add .'
