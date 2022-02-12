@@ -2,11 +2,6 @@ pipeline {
     tools {nodejs "NODE.JS"}
     agent any
     stages{
-        stage('Switching to release branch'){
-            steps{
-                bat 'git checkout release'
-            }
-        }
         stage('Build Docker Image'){
             steps{
                 bat 'docker-compose down'
@@ -21,6 +16,7 @@ pipeline {
         }
         stage('Deliver'){
             steps{
+                bat 'git checkout release'
                 bat 'git add .'
                 bat 'git commit -m "Code after test passed'
                 bat 'git push'
