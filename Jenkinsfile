@@ -6,6 +6,7 @@ pipeline {
             steps{
                 bat 'git checkout release'
             }
+        }
         stage('Build Docker Image'){
             steps{
                 bat 'docker-compose down'
