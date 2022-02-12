@@ -1,4 +1,5 @@
 pipeline {
+    tools {nodejs "NODEJS"}
     agent any
     stages{
         stage('Build Docker Image'){
